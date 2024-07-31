@@ -10,9 +10,9 @@ class additionalInfoSerializer(serializers.ModelSerializer):
 
 
 class userRegistrationSerializer(serializers.ModelSerializer):
-    profile_picture     = serializers.FileField(required=False, allow_null=True)
+    profile_picture     = serializers.URLField(required=False, allow_null=True)
     confirm_password    = serializers.CharField(required=True)
-    address             = serializers.CharField(max_length=20)
+    address             = serializers.CharField(max_length=100)
     role                = serializers.ChoiceField(choices=ROLE)
 
     class Meta:

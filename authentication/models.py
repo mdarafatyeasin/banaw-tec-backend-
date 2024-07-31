@@ -5,8 +5,8 @@ from .constants import ROLE
 # Create your models here.
 class AdditionalInfoModel(models.Model):
     user                = models.OneToOneField(User, on_delete=models.CASCADE)
-    profile_picture     = models.FileField(upload_to="profile_picture", null=True, blank=True)
-    address             = models.CharField(max_length=20)
+    profile_picture     = models.URLField(max_length=800)
+    address             = models.CharField(max_length=100)
     role                = models.CharField(max_length=10, choices=ROLE)
 
     def __str__(self):
