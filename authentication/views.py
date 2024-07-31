@@ -25,7 +25,7 @@ class userRegistration(APIView):
             uid = urlsafe_base64_encode(force_bytes(user.pk))
             print("uid: ", uid)
             print("token: ", token)
-
+            return Response({'data': 'User created successfully'}, status=status.HTTP_200_OK)
         return Response(serializer.errors)
     
 # login
