@@ -10,4 +10,5 @@ router.register('blog', views.blogsViewsets, basename='blog-data')
 # The API URLs are now determined automatically by the router.
 urlpatterns = [
     path('', include(router.urls)),
+    path('doctor/<int:id>/', views.doctorsPost.as_view(), name='doctors blog'),
 ]
